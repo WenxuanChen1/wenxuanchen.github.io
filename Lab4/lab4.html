@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Prompt and Alert Boxes</title>
+    <!-- Script can be put in body also-->
+    <script type="text/javascript">
+        window.alert("Welcome to 225 Store")
+        var name, itemRequired, numOfItem, time;
+        name = window.prompt("Enter your name: ", "name");
+        itemRequired = window.prompt("What item you looking for: ", "item name");
+        numOfItem = window.prompt("How many item you need: ", "number of item");
+        time = new Date();
+        hour = time.getHours();
+        if(hour<12){
+            document.writeln("<h1>Good Morning "+ name)
+        }else if(hour<18){
+            document.writeln("<h1>Good Afternoon "+ name)
+        }else{
+            document.writeln("<h1>Good Evening "+ name)
+        }
+        document.writeln(", Thank you for ordering</h1>")
+        if(numOfItem==1){
+            document.writeln("<h2>Item you want to order is "+numOfItem +" "+ itemRequired)
+        }else{
+            document.writeln("<h2>Item you want to order is "+numOfItem +" "+ itemRequired+"s")
+        }
+        
+        
+
+        /*
+        var x, y; //var can be any type of object 
+        x = window.prompt("First Numbers"); //it will convert in to string
+        y = window.prompt("First Numbers");
+        var z = x+y; //z = 22
+        var intZ = parseInt(x)+parseInt(y); //it will add as integer
+        */
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
