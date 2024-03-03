@@ -7,7 +7,7 @@
     <!-- Script can be put in body also-->
     <script type="text/javascript">
         window.alert("Welcome to 225 Store")
-        var name, itemRequired, numOfItem, time;
+        var name, itemRequired, numOfItem, time, arrivalTime;
         name = window.prompt("Enter your name: ", "name");
         itemRequired = window.prompt("What item you looking for: ", "item name");
         numOfItem = window.prompt("How many item you need: ", "number of item");
@@ -24,18 +24,12 @@
         if(numOfItem==1){
             document.writeln("<h2>Item you want to order is "+numOfItem +" "+ itemRequired)
         }else{
-            document.writeln("<h2>Item you want to order is "+numOfItem +" "+ itemRequired+"s")
+            document.writeln("<h2>Items you want to order are "+numOfItem +" "+ itemRequired+"s")
         }
+        arrivalTime = new Date();
+        arrivalTime.setDate(arrivalTime.getDate()+7)
+        document.writeln("<h2>Except arrival time is " + arrivalTime);
         
-        
-
-        /*
-        var x, y; //var can be any type of object 
-        x = window.prompt("First Numbers"); //it will convert in to string
-        y = window.prompt("First Numbers");
-        var z = x+y; //z = 22
-        var intZ = parseInt(x)+parseInt(y); //it will add as integer
-        */
         
     </script>
 </head>
