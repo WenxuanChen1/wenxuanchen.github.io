@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST API</title>
+    
+</head>
+<body>
+    
+    <button onclick="getData()">Get data</button>
+    <br><br>
+    <img id="catImg" src="../Lab2/img/cat2.jpg" height="200" width="200" alt="Cat Image">
+    <br><br>
+    <div>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>factId</th>
+                <th>text</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    </div>
+    <script>
+        async function getData() {
+            try {
+                const url = 'https://brianobruno.github.io/cats.json';
+                const options = { method: 'GET' };
+                const response = await fetch(url, options);
+                const myObj = await response.json();
+                //console.log(myObj);
+                //console.log(myObj.catPhoto);
+                displayTable(myObj);
+                updateCatImage(myObj.catPhoto);
+                
+            } catch (error) {
+                console.error('can not parsing data:', error);
+            }
+        }
+
+        function displayTable(data) {
+            const tableBody = document.querySelector('#dataTable tbody');
+            
+            tableBody.innerHTML = '';
+            const facts = data.facts;
+            facts.sort((a, b) => a.factId - b.factId);
+
+            facts.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.factId}</td>
+                    <td>${item.text}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function updateCatImage(imageUrl) {
+            const catImage = document.getElementById('catImg');
+            catImage.src = imageUrl;
+        }
+
+    </script>
+</body>
+</html>
