@@ -62,7 +62,7 @@ integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIe
         for (var i = 0; i < response.length; i++) {
             if(response[i].platforms.indexOf("Steam") !== -1){
                 table += '<tr>';
-                table += '<td><img src="' + response[i].image + '" alt="' + response[i].title + '"></td>';
+                table += '<td>'+'<a href = "'+ response[i].open_giveaway_url +'"><img src="' + response[i].image + '" alt="' + response[i].title + '"></a></td>';
                 table += '<td>' + response[i].title + '</td>';
                 table += '<td>' + response[i].users + '</td>';
                 table += '<td>' + response[i].worth + '</td>';

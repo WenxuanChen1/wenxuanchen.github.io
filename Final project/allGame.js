@@ -16,7 +16,7 @@ $(document).ready(function(){
         var table = '<table><thead><tr><th>Image</th><th>Title</th><th>Users</th><th>Worth</th><th>Platform</th><th>Type</th></tr></thead><tbody>';
         for (var i = 0; i < response.length; i++) {
             table += '<tr>';
-            table += '<td><img src="' + response[i].image + '" alt="' + response[i].title + '"></td>';
+            table += '<td>'+'<a href = "'+ response[i].open_giveaway_url +'"><img src="' + response[i].image + '" alt="' + response[i].title + '"></a></td>';
             table += '<td>' + response[i].title + '</td>';
             table += '<td>' + response[i].users + '</td>';
             table += '<td>' + response[i].worth + '</td>';
