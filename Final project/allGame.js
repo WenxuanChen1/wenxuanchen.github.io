@@ -2,7 +2,7 @@ $(document).ready(function(){
     const settings = {
         async: true,
         crossDomain: true,
-        url: 'https://gamerpower.p.rapidapi.com/api/filter?platform=epic-games-store.steam.android&type=game.loot',
+        url: 'https://gamerpower.p.rapidapi.com/api/giveaways',
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': 'd2129940b5msh616ad49c215b1f7p10812bjsnb839e4e08eef',
